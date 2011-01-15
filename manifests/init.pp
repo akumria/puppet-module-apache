@@ -113,7 +113,7 @@ class apache {
       require => Package["apache"],
   }
 
-  if $operatingsystem == "Debian" {
+  if $operatingsystem == "Debian" or $operatingsystem == "Ubuntu" {
     # Disable the Debian "default" site.
     file { "${sites_enabled}/000-default":
       ensure => absent,
