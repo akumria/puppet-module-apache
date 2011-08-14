@@ -77,7 +77,7 @@ class apache {
       require => Package["apache"];
     "apache.conf":
       path => "${apache_conf_dir}/${apache_conf_file}",
-      source => "puppet:///apache/apache.conf",
+      source => "puppet:///modules/apache/apache.conf",
       require => File["apache::config_dir"],
       notify => Service["apache"];
     "envvars":
